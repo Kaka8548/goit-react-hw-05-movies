@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.07d3183d.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.13a9dcb7.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.611f22e7.js",
+    "static/media/MacPawFixelText-Bold.woff2": "/goit-react-hw-05-movies/static/media/MacPawFixelText-Bold.6490bc31f1ead8b86987.woff2",
+    "static/media/MacPawFixelText-Light.woff2": "/goit-react-hw-05-movies/static/media/MacPawFixelText-Light.8f1202901afea588fba0.woff2",
+    "static/media/MacPawFixelText-Regular.woff2": "/goit-react-hw-05-movies/static/media/MacPawFixelText-Regular.615b696311567a1434b9.woff2",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/goit-react-hw-05-movies/static/js/main.07d3183d.js.map"
+    "main.13a9dcb7.css.map": "/goit-react-hw-05-movies/static/css/main.13a9dcb7.css.map",
+    "main.611f22e7.js.map": "/goit-react-hw-05-movies/static/js/main.611f22e7.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.13a9dcb7.css",
+    "static/js/main.611f22e7.js"
   ]
 }
