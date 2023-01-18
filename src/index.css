@@ -1,15 +1,55 @@
 @import-normalize; /* bring in normalize.css styles */
 
+/* Webfont: MacPawFixelText-Regular */
+@font-face {
+  font-family: 'FixelRegular';
+  src: url('./fonts/MacPawFixelText-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: MacPawFixelText-Bold */
+@font-face {
+  font-family: 'FixelBold';
+  src: url('./fonts/MacPawFixelText-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: MacPawFixelText-Light */
+@font-face {
+  font-family: 'FixelLight';
+  src: url('./fonts/MacPawFixelText-Light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'FixelRegular', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: #121722;
+  background-color: #ffce32;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  padding: 0;
+  margin: 0;
 }
