@@ -29,7 +29,7 @@
 
 body {
   margin: 0;
-  font-family: 'FixelRegular', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'FixelLight', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -48,8 +48,19 @@ h1,
 h2,
 h3,
 h4,
+p,
 ul,
 li {
   padding: 0;
   margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
