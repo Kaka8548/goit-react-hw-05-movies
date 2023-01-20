@@ -7,9 +7,11 @@ import {
   TrendingListItem,
   TrendingListPoster,
 } from './MovieList.styled';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function MovieList() {
   const [movies, setMovies] = useState([]);
+  const location = useLocation();
   const configSrc = 'https://image.tmdb.org/t/p/original';
 
   useEffect(() => {
@@ -34,11 +36,13 @@ export default function MovieList() {
     <TrendingList>
       {movies.map(movie => (
         <TrendingListItem key={movie.id}>
-          <TrendingListPoster
-            src={configSrc + movie.poster_path}
-            alt="movie poster"
-          />
-          <TrendingListTitle>{movie.title}</TrendingListTitle>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            <TrendingListPoster
+              src={configSrc + movie.poster_path}
+              alt="movie poster"
+            />
+            <TrendingListTitle>{movie.title}</TrendingListTitle>
+          </Link>
         </TrendingListItem>
       ))}
     </TrendingList>
