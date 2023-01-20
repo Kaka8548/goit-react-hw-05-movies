@@ -6,13 +6,24 @@ export default class searchMovies {
 
   constructor() {
     this.searchType = null;
+    this.query = null;
   }
 
   fetchMovies() {
     const searchParams = new URLSearchParams({
       api_key: this.#API_KEY,
+      query: this.query,
     });
 
     return axios.get(`${this.#API_URL}${this.searchType}?${searchParams}`);
   }
+
+  // fetchMoviesByQuery() {
+  //   const searchParams = new URLSearchParams({
+  //     api_key: this.#API_KEY,
+  //     query: this.query,
+  //   });
+
+  //   return axios.get(`${this.#API_URL}${this.searchType}?${searchParams}`);
+  // }
 }
