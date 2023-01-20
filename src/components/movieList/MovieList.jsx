@@ -14,6 +14,7 @@ export default function MovieList({ movies, location, configSrc }) {
         <TrendingListItem key={movie.id}>
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             <TrendingListPoster
+              loading="lazy"
               src={configSrc + movie.poster_path}
               alt="movie poster"
             />

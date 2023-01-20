@@ -12,6 +12,7 @@ import {
   MainDetailsList,
 } from './Details.styled';
 import PropTypes from 'prop-types';
+import { Suspense } from 'react';
 
 export default function Details({ movieDetails }) {
   const configSrc = 'https://image.tmdb.org/t/p/original';
@@ -50,7 +51,9 @@ export default function Details({ movieDetails }) {
               </AddInfoItem>
             </AddInfoList>
           </DetailsItem>
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </DetailsList>
       </MainDetailsItem>
     </MainDetailsList>
