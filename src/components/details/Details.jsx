@@ -11,8 +11,9 @@ import {
   MainDetailsItem,
   MainDetailsList,
 } from './Details.styled';
+import PropTypes from 'prop-types';
 
-export default function Details({ movieDetails, id }) {
+export default function Details({ movieDetails }) {
   const configSrc = 'https://image.tmdb.org/t/p/original';
   const { poster_path, vote_average, overview, genres, title } = movieDetails;
   return (
@@ -55,3 +56,7 @@ export default function Details({ movieDetails, id }) {
     </MainDetailsList>
   );
 }
+
+Details.propTypes = {
+  movieDetails: PropTypes.object.isRequired,
+};

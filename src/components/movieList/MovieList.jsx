@@ -5,6 +5,7 @@ import {
   TrendingListPoster,
 } from './MovieList.styled';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function MovieList({ movies, location, configSrc }) {
   return (
@@ -23,3 +24,9 @@ export default function MovieList({ movies, location, configSrc }) {
     </TrendingList>
   );
 }
+
+MovieList.propTypes = {
+  movies: PropTypes.array.isRequired,
+  location: PropTypes.object.isRequired,
+  configSrc: PropTypes.string.isRequired,
+};
