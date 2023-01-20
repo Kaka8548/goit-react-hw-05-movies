@@ -1,4 +1,8 @@
+import { Outlet } from 'react-router-dom';
 import {
+  AddInfoItem,
+  AddInfoLink,
+  AddInfoList,
   DetailsItem,
   DetailsList,
   DetailsTitle,
@@ -8,10 +12,9 @@ import {
   MainDetailsList,
 } from './Details.styled';
 
-export default function Details({ movieDetails }) {
+export default function Details({ movieDetails, id }) {
   const configSrc = 'https://image.tmdb.org/t/p/original';
   const { poster_path, vote_average, overview, genres, title } = movieDetails;
-
   return (
     <MainDetailsList>
       <MainDetailsItem>
@@ -26,7 +29,7 @@ export default function Details({ movieDetails }) {
           <DetailsItem>User Score: {vote_average}</DetailsItem>
           <DetailsItem>Overview</DetailsItem>
           <DetailsItem>{overview}</DetailsItem>
-          <DetailsItem>Genres</DetailsItem>{' '}
+          <DetailsItem>Genres</DetailsItem>
           <DetailsItem>
             <GenresList>
               {genres &&
@@ -35,6 +38,18 @@ export default function Details({ movieDetails }) {
                 ))}
             </GenresList>
           </DetailsItem>
+          <DetailsItem>
+            <AddInfoList>
+              <AddInfoItem>
+                <AddInfoLink to="cast">Cast</AddInfoLink>
+              </AddInfoItem>
+
+              <AddInfoItem>
+                <AddInfoLink to="reviews">Reviews</AddInfoLink>
+              </AddInfoItem>
+            </AddInfoList>
+          </DetailsItem>
+          <Outlet />
         </DetailsList>
       </MainDetailsItem>
     </MainDetailsList>

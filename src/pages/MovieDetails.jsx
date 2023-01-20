@@ -31,7 +31,7 @@ export default function MovieDetails() {
   return (
     <div>
       <GoBackBtn backLinkHref={backLinkHref}>Go back</GoBackBtn>
-      <Details movieDetails={movieDetails} />
+      <Details movieDetails={movieDetails} id={movieId} />
     </div>
   );
 }

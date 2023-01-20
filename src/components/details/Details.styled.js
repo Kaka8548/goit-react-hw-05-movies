@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const MainDetailsList = styled.ul`
@@ -38,3 +39,20 @@ export const GenresList = styled.ul`
 `;
 
 export const GenresItem = styled.li``;
+
+export const AddInfoList = styled.ul`
+  list-style: disc;
+  margin-left: 15px;
+`;
+
+export const AddInfoItem = styled.li``;
+
+export const AddInfoLink = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
+
+  &.active {
+    color: #1d63ff;
+    text-decoration: underline;
+  }
+`;
