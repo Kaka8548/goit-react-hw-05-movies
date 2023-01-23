@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export default class searchMovies {
+class SearchMovies {
   #API_KEY = '65e6f4aac7e3640c780d24b1205717d3';
   #API_URL = `https://api.themoviedb.org/3`;
 
   constructor() {
-    this.searchType = null;
+    this.endpoint = null;
     this.query = null;
   }
 
@@ -18,3 +18,5 @@ export default class searchMovies {
     return axios.get(`${this.#API_URL}${this.searchType}?${searchParams}`);
   }
 }
+
+export const api = new SearchMovies();

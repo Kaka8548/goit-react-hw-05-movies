@@ -1,7 +1,7 @@
-import searchMovies from 'api/searchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CastList } from './Cast.styled';
+import { api } from 'api/searchMovies';
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -10,8 +10,8 @@ export default function Cast() {
   useEffect(() => {
     if (!movieCast) return;
 
-    const search = new searchMovies();
-    search.searchType = `/movie/${movieId}/credits`;
+    const search = api;
+    search.endpoint = `/movie/${movieId}/credits`;
 
     async function fetchedMovies() {
       try {

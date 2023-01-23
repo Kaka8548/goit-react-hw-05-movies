@@ -1,4 +1,3 @@
-import searchMovies from 'api/searchMovies';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
@@ -8,6 +7,7 @@ import {
   ReviewsItem,
   ReviewsList,
 } from './Reviews.styled';
+import { api } from 'api/searchMovies';
 
 export default function Reviews() {
   const { movieId } = useParams();
@@ -16,8 +16,8 @@ export default function Reviews() {
   useEffect(() => {
     if (!movieReview) return;
 
-    const search = new searchMovies();
-    search.searchType = `/movie/${movieId}/reviews`;
+    const search = api;
+    search.endpoint = `/movie/${movieId}/reviews`;
 
     async function fetchedMovies() {
       try {

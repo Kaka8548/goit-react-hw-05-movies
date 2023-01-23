@@ -1,4 +1,4 @@
-import searchMovies from 'api/searchMovies';
+import { api } from 'api/searchMovies';
 import Details from 'components/details/Details';
 import GoBackBtn from 'components/goBackBtn/GoBackBtn';
 import { useEffect, useState } from 'react';
@@ -13,8 +13,8 @@ export default function MovieDetails() {
   useEffect(() => {
     if (!movieDetails) return;
 
-    const search = new searchMovies();
-    search.searchType = `/movie/${movieId}`;
+    const search = api;
+    search.endpoint = `/movie/${movieId}`;
 
     async function fetchedMovies() {
       try {

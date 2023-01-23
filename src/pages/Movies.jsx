@@ -1,4 +1,4 @@
-import searchMovies from 'api/searchMovies';
+import { api } from 'api/searchMovies';
 import MovieList from 'components/movieList/MovieList';
 import SearchBar from 'components/searchBar/SearchBar';
 import { useEffect } from 'react';
@@ -14,8 +14,8 @@ export default function Movies() {
 
   useEffect(() => {
     const fetchedMovies = async () => {
-      const searchForQuery = new searchMovies();
-      searchForQuery.searchType = '/search/movie';
+      const searchForQuery = api;
+      searchForQuery.endpoint = '/search/movie';
       searchForQuery.query = movieQuery;
 
       try {
