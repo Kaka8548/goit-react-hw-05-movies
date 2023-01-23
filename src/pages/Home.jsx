@@ -16,16 +16,14 @@ export default function Home() {
     async function fetchedMovies() {
       try {
         const result = await search.fetchMovies();
-        if (movies.length === 0) {
-          setMovies(result.data.results);
-        }
+        setMovies(result.data.results);
       } catch (error) {
         console.log(error);
       }
     }
 
     fetchedMovies();
-  }, [movies]);
+  }, []);
 
   return (
     <>

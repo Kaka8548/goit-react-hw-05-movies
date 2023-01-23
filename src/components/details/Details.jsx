@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import {
   AddInfoItem,
   AddInfoLink,
@@ -17,6 +17,8 @@ import { Suspense } from 'react';
 export default function Details({ movieDetails }) {
   const configSrc = 'https://image.tmdb.org/t/p/original';
   const { poster_path, vote_average, overview, genres, title } = movieDetails;
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
   return (
     <MainDetailsList>
       <MainDetailsItem>
@@ -43,11 +45,15 @@ export default function Details({ movieDetails }) {
           <DetailsItem>
             <AddInfoList>
               <AddInfoItem>
-                <AddInfoLink to="cast">Cast</AddInfoLink>
+                <AddInfoLink to="cast" state={{ from: backLinkHref }}>
+                  Cast
+                </AddInfoLink>
               </AddInfoItem>
 
               <AddInfoItem>
-                <AddInfoLink to="reviews">Reviews</AddInfoLink>
+                <AddInfoLink to="reviews" state={{ from: backLinkHref }}>
+                  Reviews
+                </AddInfoLink>
               </AddInfoItem>
             </AddInfoList>
           </DetailsItem>

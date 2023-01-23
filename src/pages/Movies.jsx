@@ -13,6 +13,7 @@ export default function Movies() {
   const configSrc = 'https://image.tmdb.org/t/p/original';
 
   useEffect(() => {
+    if (!movieQuery) return;
     const fetchedMovies = async () => {
       const searchForQuery = api;
       searchForQuery.endpoint = '/search/movie';
