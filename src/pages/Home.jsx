@@ -10,12 +10,11 @@ export default function Home() {
   const configSrc = 'https://image.tmdb.org/t/p/original';
 
   useEffect(() => {
-    const search = api;
-    search.endpoint = '/trending/movie/day';
+    api.endpoint = '/trending/movie/day';
 
     async function fetchedMovies() {
       try {
-        const result = await search.fetchMovies();
+        const result = await api.fetchMovies();
         setMovies(result.data.results);
       } catch (error) {
         console.log(error);

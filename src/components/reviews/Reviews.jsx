@@ -14,14 +14,13 @@ export default function Reviews() {
   const [movieReview, setMovieReview] = useState([]);
 
   useEffect(() => {
-    if (!movieReview) return;
+    if (!movieId) return;
 
-    const search = api;
-    search.endpoint = `/movie/${movieId}/reviews`;
+    api.endpoint = `/movie/${movieId}/reviews`;
 
     async function fetchedMovies() {
       try {
-        const result = await search.fetchMovies();
+        const result = await api.fetchMovies();
         setMovieReview(result.data.results);
       } catch (error) {
         console.log(error);
@@ -29,7 +28,7 @@ export default function Reviews() {
     }
 
     fetchedMovies();
-  }, [movieReview, movieId]);
+  }, [movieId]);
 
   return (
     <>

@@ -8,14 +8,13 @@ export default function Cast() {
   const [movieCast, setMovieCast] = useState([]);
 
   useEffect(() => {
-    if (!movieCast) return;
+    if (!movieId) return;
 
-    const search = api;
-    search.endpoint = `/movie/${movieId}/credits`;
+    api.endpoint = `/movie/${movieId}/credits`;
 
     async function fetchedMovies() {
       try {
-        const result = await search.fetchMovies();
+        const result = await api.fetchMovies();
         setMovieCast(result.data.cast);
       } catch (error) {
         console.log(error);
@@ -23,7 +22,7 @@ export default function Cast() {
     }
 
     fetchedMovies();
-  }, [movieCast, movieId]);
+  }, [movieId]);
 
   return (
     <CastList>

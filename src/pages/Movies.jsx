@@ -15,12 +15,11 @@ export default function Movies() {
   useEffect(() => {
     if (!movieQuery) return;
     const fetchedMovies = async () => {
-      const searchForQuery = api;
-      searchForQuery.endpoint = '/search/movie';
-      searchForQuery.query = movieQuery;
+      api.endpoint = '/search/movie';
+      api.query = movieQuery;
 
       try {
-        const movies = await searchForQuery.fetchMovies();
+        const movies = await api.fetchMovies();
         setQueryMovies(movies.data.results);
       } catch (error) {
         console.log(error);
